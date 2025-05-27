@@ -1,0 +1,202 @@
+/* ==================================== */
+/* 1. Base Styles (Mobile-First)      */
+/* Ini adalah gaya default untuk perangkat seluler (layar terkecil) */
+/* ==================================== */
+:root {
+    --primary-color: #007bff;
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+/* Header & Nav */
+header {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column; /* Default menumpuk di mobile */
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px; /* Jarak dari nav-links di mobile */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Default menumpuk di mobile */
+    width: 100%;
+}
+
+.nav-links li {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero button {
+    background-color: #fff;
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Cards Section */
+.cards {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column; /* Default menumpuk di mobile */
+    gap: 1.5rem; /* Jarak antar card */
+    max-width: 1200px; /* Batas lebar konten utama */
+    margin: 0 auto; /* Pusatkan konten */
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ==================================== */
+/* 2. Media Queries (Breakpoints)     */
+/* ==================================== */
+
+/* Breakpoint untuk Tablet (min-width: 768px) */
+@media screen and (min-width: 768px) {
+    nav {
+        flex-direction: row; /* Navigasi menjadi baris */
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-bottom: 0; /* Hilangkan margin bawah */
+    }
+
+    .nav-links {
+        flex-direction: row; /* Link navigasi menjadi baris */
+        width: auto; /* Lebar otomatis */
+    }
+
+    .nav-links li {
+        margin: 0 10px; /* Jarak horizontal antar link */
+    }
+
+    .hero {
+        padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .cards {
+        flex-direction: row; /* Cards menjadi baris */
+        flex-wrap: wrap; /* Izinkan membungkus ke baris baru */
+        justify-content: center; /* Pusatkan cards */
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 2rem); /* 2 kolom di tablet (dengan gap) */
+        max-width: calc(50% - 2rem);
+    }
+}
+
+/* Breakpoint untuk Desktop (min-width: 1024px) */
+@media screen and (min-width: 1024px) {
+    header {
+        padding: 1rem 2rem; /* Tambah padding horizontal di desktop */
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto; /* Pusatkan navigasi */
+    }
+
+    .hero {
+        padding: 6rem 3rem;
+    }
+
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero p {
+        font-size: 1.3rem;
+    }
+
+    .cards {
+        gap: 2rem; /* Jarak antar card lebih besar di desktop */
+    }
+
+    .card {
+        flex: 1 1 calc(33.33% - 2rem); /* 3 kolom di desktop */
+        max-width: calc(33.33% - 2rem);
+    }
+}
